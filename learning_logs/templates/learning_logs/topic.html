@@ -1,0 +1,23 @@
+<!-- Extend the base.html -->
+{% extends 'learning_logs/base.html' %}
+{% block content %}
+    <!-- show the topic thats currently being displayed, which is 
+    stored in the template variable {{ topic }}-->
+    <p>Topic: {{ topic }}</p>
+
+    <p>Entries: </p>
+    <!-- start a bulleted list to show each of the enrtries -->
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <!-- each bullet lists two pieces of information: the timestamp
+                and the full text of the entry-->
+                <!-- In Django templates, a vertical line (|) in a template represents a template filter-->
+                <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+                <P>{{ entry.text|linebreaks }}</P>
+            </li>
+        {% empty %}
+            <li>There are no entries for this topic yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
