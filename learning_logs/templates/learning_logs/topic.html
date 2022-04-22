@@ -1,11 +1,17 @@
 <!-- Extend the base.html -->
 {% extends 'learning_logs/base.html' %}
+
 {% block content %}
+
     <!-- show the topic thats currently being displayed, which is 
     stored in the template variable {{ topic }}-->
     <p>Topic: {{ topic }}</p>
 
     <p>Entries: </p>
+    <p>
+        <a href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
+    </p>
+
     <!-- start a bulleted list to show each of the enrtries -->
     <ul>
         {% for entry in entries %}
