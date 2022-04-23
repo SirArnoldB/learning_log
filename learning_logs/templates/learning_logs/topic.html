@@ -21,6 +21,9 @@
                 <!-- In Django templates, a vertical line (|) in a template represents a template filter-->
                 <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
                 <P>{{ entry.text|linebreaks }}</P>
+                <p>
+                    <a href="{% url 'learning_logs:edit_entry' entry.id %}">Edit Entry</a>
+                </p>
             </li>
         {% empty %}
             <li>There are no entries for this topic yet.</li>

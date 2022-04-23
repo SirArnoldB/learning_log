@@ -21,6 +21,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # this will match any url that starts with the word users. 
+    path('users/', include('users.urls')), 
     # include the module learning_logs.urls
     path('', include('learning_logs.urls')), 
 ]
