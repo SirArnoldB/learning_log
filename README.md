@@ -3,4 +3,4 @@
 > The learning Log home page describes the site and invites users to either register or log in. 
 > Once the user is logged in, they can create topics, add new entries, and read and edit existing entries
 
-> Note: this project is based on the project in https://nostarch.com/pythoncrashcourse2e by Eric Matthes. I have added additional functionality. 
+> Note: this project is build up on the web application challenge in https://nostarch.com/pythoncrashcourse2e by Eric Matthes.
