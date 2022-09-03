@@ -1,0 +1,17 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+    {# Show the topic at the top of the page. #}
+    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+    <p>Add a new entry:</p>
+    <form action="{% url 'learning_logs:new_entry' topic.id%}" method="post">
+        {# Prevent cross-site request forgery. #}
+        {% csrf_token %}
+        {# as_p modifier tells Django to render all the entry elements in paragraph format. #}
+        {{ form.as_p }}
+        <button name="submit">Add entry</button>
+    </form>
+
+{% endblock content %}
