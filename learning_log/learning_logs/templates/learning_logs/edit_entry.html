@@ -1,0 +1,16 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+    <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+
+    <p>Edit entry:</p>
+    <form action="{% url 'learning_logs:edit_entry' entry.id%}" method="post">
+        {# Prevent cross-site request forgery. #}
+        {% csrf_token %}
+        {# as_p modifier tells Django to render all the entry elements in paragraph format. #}
+        {{ form.as_p }}
+        <button name="submit">Save changes</button>
+    </form>
+
+{% endblock content %}
